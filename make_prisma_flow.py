@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+"""Generate a simple PRISMA flow figure as SVG for documentation."""
+from pathlib import Path
+
+out = Path(__file__).resolve().parent / "prisma_flow.svg"
+svg = '''<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="420" viewBox="0 0 520 420">
+  <style>
+    .box { fill:#f7f7f7; stroke:#222; stroke-width:1.5; }
+    .t { font-family: DejaVu Sans, Arial, sans-serif; font-size:13px; }
+    .n { font-family: DejaVu Sans, Arial, sans-serif; font-size:14px; font-weight:bold; }
+    .arr { stroke:#222; stroke-width:1.5; marker-end:url(#m); }
+  </style>
+  <defs>
+    <marker id="m" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#222"/>
+    </marker>
+  </defs>
+  <rect class="box" x="110" y="20" width="300" height="50" rx="6"/>
+  <text class="t" x="260" y="40" text-anchor="middle">Identified (OpenAlex)</text>
+  <text class="n" x="260" y="58" text-anchor="middle">N = 196,943</text>
+  <line class="arr" x1="260" y1="70" x2="260" y2="95"/>
+  <rect class="box" x="110" y="95" width="300" height="50" rx="6"/>
+  <text class="t" x="260" y="115" text-anchor="middle">Retrieved for screening</text>
+  <text class="n" x="260" y="133" text-anchor="middle">N = 2,000</text>
+  <line class="arr" x1="260" y1="145" x2="260" y2="170"/>
+  <rect class="box" x="110" y="170" width="300" height="50" rx="6"/>
+  <text class="t" x="260" y="190" text-anchor="middle">After title screening</text>
+  <text class="n" x="260" y="208" text-anchor="middle">N = 822</text>
+  <line class="arr" x1="260" y1="220" x2="260" y2="245"/>
+  <rect class="box" x="110" y="245" width="300" height="50" rx="6"/>
+  <text class="t" x="260" y="265" text-anchor="middle">After abstract screening</text>
+  <text class="n" x="260" y="283" text-anchor="middle">N = 107</text>
+  <line class="arr" x1="260" y1="295" x2="260" y2="320"/>
+  <rect class="box" x="110" y="320" width="300" height="50" rx="6"/>
+  <text class="t" x="260" y="340" text-anchor="middle">Included for synthesis</text>
+  <text class="n" x="260" y="358" text-anchor="middle">N = 23</text>
+  <text class="t" x="260" y="400" text-anchor="middle">MH-IS / iSys PRISMA flow (OpenAlex, 2021–2026)</text>
+</svg>
+'''
+out.write_text(svg, encoding="utf-8")
+print("wrote", out)

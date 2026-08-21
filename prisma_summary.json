@@ -1,0 +1,21 @@
+{
+  "search_string": "(\"human dignity\" OR \"digital ethics\" OR \"responsible AI\" OR \"AI ethics\" OR fairness) AND (\"information systems\" OR \"software development\" OR \"AI governance\" OR \"algorithmic fairness\")",
+  "database": "OpenAlex",
+  "date_range": "2021-01-01 to 2026-12-31",
+  "identified": 196943,
+  "retrieved_for_screening": 2000,
+  "after_title_screen": 822,
+  "after_abstract_screen": 107,
+  "included_full_text_review": 23,
+  "theme_coverage": {
+    "fairness": 6,
+    "ethics_dev": 14,
+    "sociotech_is": 11,
+    "responsible_ai_gov": 8,
+    "trust_xai": 6,
+    "human_dignity": 2
+  },
+  "notes": "Identification count reflects the broad OpenAlex Boolean query. Screening was applied to the top-cited operational sample of 2000 retrieved records (feasible qualitative screening). Included corpus: dados/prisma_included.csv. Re-run: python dados/prisma_search.py --write-summary",
+  "data_repository": "https://github.com/leozamboni/human-dignity-in-the-age-of-ai",
+  "mailto": "leonardonunes169@gmail.com"
+}
